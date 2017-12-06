@@ -2,7 +2,7 @@
 
 The ubsub-notify package provides integration with ubsub and libnotify.
 
-Uses [growl](https://www.npmjs.com/package/growl) to send messages.
+Uses [node-notifier](https://github.com/mikaelbr/node-notifier) to send messages.
 
 ## Install
 
@@ -10,35 +10,11 @@ Uses [growl](https://www.npmjs.com/package/growl) to send messages.
 npm install -g ubsub-notify
 ```
 
-### Mac OS X (Darwin):
-
-  Install [growlnotify(1)](http://growl.info/extras.php#growlnotify). On OS X 10.8, Notification Center is supported using [terminal-notifier](https://github.com/alloy/terminal-notifier). To install:
-
-    $ sudo gem install terminal-notifier
-
-  Install [npm](http://npmjs.org/) and run:
-
-    $ npm install growl
-
-### Ubuntu (Linux):
-
-  Install `notify-send` through the [libnotify-bin](http://packages.ubuntu.com/libnotify-bin) package:
-
-    $ sudo apt-get install libnotify-bin
-
-  Install [npm](http://npmjs.org/) and run:
-
-    $ npm install growl
-
-### Windows:
-
-  Download and install [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
-
-  Download [growlnotify](http://www.growlforwindows.com/gfw/help/growlnotify.aspx) - **IMPORTANT :** Unpack growlnotify to a folder that is present in your path!
-
-  Install [npm](http://npmjs.org/) and run:
-
-    $ npm install growl
+## Requirements (node-notifier)
+- **macOS**: >= 10.8 or Growl if earlier.
+- **Linux**: `notify-osd` or `libnotify-bin` installed (Ubuntu should have this by default)
+- **Windows**: >= 8, task bar balloon for Windows < 8. Growl as fallback. Growl takes precedence over Windows balloons.
+- **General Fallback**: Growl
 
 ## Usage
 
