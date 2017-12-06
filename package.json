@@ -1,0 +1,25 @@
+{
+  "name": "ubsub-notify",
+  "version": "0.1.0",
+  "description": "UbSub hooks into libnotify",
+  "main": "notify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubsub/ubsub-notify.git"
+  },
+  "keywords": [
+    "UbSub",
+    "pubsub",
+    "notifications",
+    "notify"
+  ],
+  "author": "UbSub.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ubsub/ubsub-notify/issues"
+  },
+  "homepage": "https://github.com/ubsub/ubsub-notify#readme"
+}
