@@ -2,6 +2,15 @@
 const _ = require('lodash');
 const ubsub = require('ubsub');
 const notifier = require('node-notifier');
+const os = require('os');
+const fs = require('fs');
+
+const CONFIG_PATH = `${os.homedir()}/.ubsub`;
+function loadConfig() {
+  if (fs.existsSync(CONFIG_PATH))
+    return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
+  return {};
+}
 
 const args = require('yargs')
   .usage('$0 [args]', 'Set up notifications for a given ubsub topic using node-notifier')
@@ -9,10 +18,8 @@ const args = require('yargs')
   .alias('help', 'h')
   .string('user')
   .describe('user', 'User id to override one that you logged in to')
-  .demand('user')
   .string('userkey')
   .describe('userkey', 'User key to override your logged in account')
-  .demand('userkey')
   .describe('topic', 'The topic to listen on')
   .string('topic')
   .alias('topic', 't')
@@ -44,11 +51,11 @@ const args = require('yargs')
     eg. UBSUB_USER, UBSUB_USERKEY`)
   .argv;
 
-const client = ubsub(args.user, args.userkey);
+const cfg = loadConfig();
+const client = ubsub(args.user || cfg.userId, args.userkey || cfg.userKey);
+
 console.log(`Listening to ${args.user}:${args.topic}...`);
-client.listen(args.topic, (event) => {
-  console.dir(event);
-  const payload = event.payload;
+client.listen(args.topic, (payload) => {
   const message = _.get(payload, args.messagekey, 'Undefined message');
   const title = _.get(payload, args.titlekey, 'UbSub Event');
   const sticky = !!_.get(payload, args.stickykey, args.sticky);
@@ -60,8 +67,8 @@ client.listen(args.topic, (event) => {
   notifier.notify({
     title,
     message,
-    icon: args.icon,
-    sound: args.sound,
-    wait: args.sticky,
+    icon: image,
+    wait: sticky,
+    priority,
   });
 });
