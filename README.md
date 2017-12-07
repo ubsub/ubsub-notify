@@ -1,5 +1,9 @@
 # ubsub-notify
 
+[![Build Status](https://travis-ci.org/ubsub/ubsub-notify.svg?branch=master)](https://travis-ci.org/ubsub/ubsub-notify)
+[![npm](https://img.shields.io/npm/v/ubsub-notify.svg)](https://www.npmjs.com/package/ubsub-notify)
+[![npm](https://img.shields.io/npm/l/ubsub-notify.svg)](https://www.npmjs.com/package/ubsub-notify)
+
 The ubsub-notify package provides integration with ubsub and libnotify.
 
 Uses [node-notifier](https://github.com/mikaelbr/node-notifier) to send messages.
@@ -18,7 +22,21 @@ npm install -g ubsub-notify
 
 ## Usage
 
-TODO
+It is recommended that you run `ubsub login` first to save your user credentials.
+
+You may also specify them via CLI args, or via environmental variables `UBSUB_USER` and `UBSUB_USERKEY`.
+
+Once you have logged in, simply run:
+
+```bash
+ubsub-notify -t <topicid>
+```
+
+You can see full capabilities by running:
+
+```bash
+ubsub-notify -g
+```
 
 # License
 

@@ -13,7 +13,7 @@ function loadConfig() {
 }
 
 const args = require('yargs')
-  .usage('$0 [args]', 'Set up notifications for a given ubsub topic using node-notifier')
+  .usage('$0 [args]')
   .help('help')
   .alias('help', 'h')
   .string('user')
@@ -47,6 +47,7 @@ const args = require('yargs')
   .describe('image', 'The default image to use for the event')
   .string('image')
   .env('UBSUB')
+  .version()
   .epilog(`You can set login information via environmental variables,
     eg. UBSUB_USER, UBSUB_USERKEY`)
   .argv;
