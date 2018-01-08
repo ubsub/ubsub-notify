@@ -35,7 +35,7 @@ ubsub-notify -t <topicid>
 You can see full capabilities by running:
 
 ```bash
-ubsub-notify -g
+ubsub-notify -h
 ```
 
 # License
