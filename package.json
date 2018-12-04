@@ -1,6 +1,6 @@
 {
   "name": "ubsub-notify",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "UbSub hooks into libnotify",
   "main": "notify.js",
   "bin": {
