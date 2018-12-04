@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/ubsub/ubsub-notify#readme",
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.11",
     "node-notifier": "^5.1.2",
     "ubsub": "^0.2.2",
     "yargs": "^10.0.3"
