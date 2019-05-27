@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const _ = require('lodash');
-const ubsub = require('ubsub');
+const ubsub = require('libubsub').streaming;
 const notifier = require('node-notifier');
 const os = require('os');
 const fs = require('fs');

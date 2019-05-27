@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/ubsub/ubsub-notify#readme",
   "dependencies": {
+    "libubsub": "^0.1.2",
     "lodash": "^4.17.11",
     "node-notifier": "^5.1.2",
-    "ubsub": "^0.2.2",
     "yargs": "^10.0.3"
   },
   "devDependencies": {
